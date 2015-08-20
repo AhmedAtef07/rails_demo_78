@@ -1,8 +1,7 @@
-== README
+== rails g devise:install
 
-## rails g devise:install
-
-### Steps:
+Steps:
+=====
 1. Make new Project, test the server.
 2. open sublime
 3. rails g scaffold title:string body:text
@@ -12,27 +11,27 @@
 7. put devise into the ruby gems
 8. bundle install and restart the server
 9. rails g devise:install
-10.follow the steps by adding the config into the dev rb
-11.rails g devise:views
-12.rails g devise User
-13.rake db:migrate
-14.Restart the server and test /users/sign_up
-15.rails c and check for User.first
-16.show ‘rake routes’ to see what else beside users/ and posts as well
-17.Try user_signed_in? in index
-18.Try current_user
-19.Add links to sign out, sign up, sign in, get them from rake routes
-20.rails g migration add_user_id_to_posts user_id:integer:index
-21.rake db:migrate
-22.add has many and belongs to
-23.@user.post.build generates new post with the user_id automatically
-24.‘build’ only generate new
-25.‘create’ generate new and saves into db
-26.update post controller (new and create) methods with @user.posts.build
-27.add new post from /posts/new
-28.check Post.last.user.email
-29.show email in the show html
-30.authenticate before action, so only signed in people can create
+10. follow the steps by adding the config into the dev rb
+11. rails g devise:views
+12. rails g devise User
+13. rake db:migrate
+14. Restart the server and test /users/sign_up
+15. rails c and check for User.first
+16. show ‘rake routes’ to see what else beside users/ and posts as well
+17. Try user_signed_in? in index
+18. Try current_user
+19. Add links to sign out, sign up, sign in, get them from rake routes
+20. rails g migration add_user_id_to_posts user_id:integer:index
+21. rake db:migrate
+22. add has many and belongs to
+23. @user.post.build generates new post with the user_id automatically
+24. ‘build’ only generate new
+25. ‘create’ generate new and saves into db
+26. update post controller (new and create) methods with @user.posts.build
+27. add new post from /posts/new
+28. check Post.last.user.email
+29. show email in the show html
+30. authenticate before action, so only signed in people can create
 before_action :authenticate_user!, except: [:show, :index]
-31.Rails.Logger = Logger.new(STDOUT)
+31. Rails.Logger = Logger.new(STDOUT)
 logger.debug post_params
