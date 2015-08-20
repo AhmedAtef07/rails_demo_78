@@ -1,28 +1,38 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## rails g devise:install
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### Steps:
+1. Make new Project, test the server.
+2. open sublime
+3. rails g scaffold title:string body:text
+4. rake db:migrate
+5. set root path
+6. Open rubygems.org and search for devise
+7. put devise into the ruby gems
+8. bundle install and restart the server
+9. rails g devise:install
+10.follow the steps by adding the config into the dev rb
+11.rails g devise:views
+12.rails g devise User
+13.rake db:migrate
+14.Restart the server and test /users/sign_up
+15.rails c and check for User.first
+16.show ‘rake routes’ to see what else beside users/ and posts as well
+17.Try user_signed_in? in index
+18.Try current_user
+19.Add links to sign out, sign up, sign in, get them from rake routes
+20.rails g migration add_user_id_to_posts user_id:integer:index
+21.rake db:migrate
+22.add has many and belongs to
+23.@user.post.build generates new post with the user_id automatically
+24.‘build’ only generate new
+25.‘create’ generate new and saves into db
+26.update post controller (new and create) methods with @user.posts.build
+27.add new post from /posts/new
+28.check Post.last.user.email
+29.show email in the show html
+30.authenticate before action, so only signed in people can create
+before_action :authenticate_user!, except: [:show, :index]
+31.Rails.Logger = Logger.new(STDOUT)
+logger.debug post_params
